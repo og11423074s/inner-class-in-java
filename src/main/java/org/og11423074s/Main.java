@@ -1,17 +1,35 @@
 package org.og11423074s;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.og11423074s.samples.Computer;
+import org.og11423074s.samples.Display;
+import org.og11423074s.samples.Memory;
+
+
 public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Computer comp1 = new Computer(
+                new Display("lg", 1200),
+                new Memory("moto", 800)
+        );
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Computer comp2 = new Computer(
+                new Display("mag", 900),
+                new Memory("king", 1000)
+        );
+
+        Computer.CPU gogo = comp2.new CPU("gogo", 800);
+
+        Computer.CPU cpu2 = comp2.getCpu();
+        cpu2.printDetails();
+
+        Computer.CPU cpu1 = comp1.getCpu();
+        cpu1.printDetails();
+
+
+
+
     }
+
 }
